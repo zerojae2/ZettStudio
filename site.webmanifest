@@ -1,0 +1,22 @@
+{
+  "name": "이영재 | Game Project Portfolio",
+  "short_name": "이영재 Portfolio",
+  "description": "게임 기획자 이영재의 프로젝트 포트폴리오",
+  "lang": "ko",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071526",
+  "theme_color": "#071526",
+  "icons": [
+    {
+      "src": "assets/images/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

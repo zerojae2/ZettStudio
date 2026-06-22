@@ -60,8 +60,8 @@ window.PORTFOLIO_DATA = {
       title: "구천을 기는 용",
       type: "TEAM PROJECT",
       typeClass: "team",
-      image: "assets/images/dragon-ascension.png",
-      heroImage: "assets/images/dragon-ascension.png",
+      image: "assets/images/dragon-ascension.svg",
+      heroImage: "assets/images/dragon-ascension.svg",
       heroImagePosition: "50% 50%",
       heroImagePositionTablet: "50% 46%",
       heroImagePositionMobile: "50% 44%",
@@ -123,8 +123,7 @@ window.PORTFOLIO_DATA = {
       },
       accent: "#4ebcff",
       documents: [
-        { id: "GDD", title: "GDD", description: "Gungeon Heroes GDD 문서 입니다.", file: "documents/gungeon-heroes/Gungeon_Heroes_GDD.pdf" },
-        { id: "proposal", title: "개발제안서", description: "Gungeon Heroes 개발제안서 문서 입니다.", file: "documents/gungeon-heroes/Gungeon_Heroes_Proposal.pdf" },
+        { id: "proposal", title: "개발제안서", description: "프로젝트 비전과 시장 포지셔닝", file: "" },
         { id: "character", title: "캐릭터컨셉기획서", description: "수집 캐릭터와 파티 역할 설계", file: "" },
         { id: "environment", title: "배경컨셉기획서", description: "일곱 감정의 탑과 세계관 비주얼", file: "" },
         { id: "system", title: "게임시스템기획서", description: "전투·수집·성장·빌드 시스템", file: "" },
@@ -139,8 +138,8 @@ window.PORTFOLIO_DATA = {
       title: "Familia Chronicle",
       type: "PERSONAL PROJECT",
       typeClass: "personal-green",
-      image: "assets/images/familia-chronicle.png",
-      heroImage: "assets/images/familia-chronicle.png",
+      image: "assets/images/familia-chronicle.svg",
+      heroImage: "assets/images/familia-chronicle.svg",
       heroImagePosition: "50% 50%",
       heroImagePositionTablet: "50% 46%",
       heroImagePositionMobile: "50% 44%",
@@ -180,14 +179,14 @@ window.PORTFOLIO_DATA = {
       title: "구천을 기는 용 | UE5 Prototype",
       duration: "2:15",
       youtubeId: "",
-      thumbnail: "assets/images/dragon-ascension.png",
+      thumbnail: "assets/images/dragon-ascension.svg",
       imagePosition: "50% 50%"
     },
     {
       projectId: "gungeon-heroes",
       title: "Gungeon Heroes | UE5 Prototype",
       duration: "2:26",
-      youtubeId: "fPc3WVUWpRs",
+      youtubeId: "",
       thumbnail: "assets/images/gungeon-heroes-hero.png",
       imagePosition: "65% 50%"
     },
@@ -196,7 +195,7 @@ window.PORTFOLIO_DATA = {
       title: "Familia Chronicle | UE5 Prototype",
       duration: "2:18",
       youtubeId: "",
-      thumbnail: "assets/images/familia-chronicle.png",
+      thumbnail: "assets/images/familia-chronicle.svg",
       imagePosition: "50% 50%"
     }
   ]

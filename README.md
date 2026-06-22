@@ -134,3 +134,13 @@ assets/css/style.css
   line-height: 1.08;
 }
 ```
+
+## SEO 공유 이미지
+
+카카오톡, 디스코드, 페이스북, 링크드인, X(Twitter) 링크 미리보기에 사용되는 Open Graph 이미지를 추가했습니다.
+
+```text
+assets/images/og-image.jpg
+```
+
+`index.html`에 Open Graph 및 Twitter Card 메타 태그가 등록되어 있습니다. 실제 배포 전에 `https://your-domain.com/`을 본인의 배포 주소로 변경해야 합니다. 자세한 설정 방법은 `SEO_IMAGE_GUIDE.md`를 확인하세요.
