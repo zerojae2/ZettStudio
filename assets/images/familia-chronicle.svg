@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Familia Chronicle 프로젝트 플레이스홀더</title>
+  <desc id="desc">던전 도시와 성벽을 표현한 밝은 판타지 배경</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#72c8ff"/><stop offset=".6" stop-color="#d6f4ff"/><stop offset="1" stop-color="#f8fbdf"/></linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4a9c6a"/><stop offset="1" stop-color="#174c39"/></linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="260" cy="170" r="90" fill="#fff4b5" opacity=".8"/>
+  <g fill="#fff" opacity=".72"><ellipse cx="510" cy="190" rx="150" ry="45"/><ellipse cx="630" cy="190" rx="120" ry="38"/><ellipse cx="1320" cy="120" rx="180" ry="54"/></g>
+  <path d="M0 640 260 440 440 600 660 390 850 620 1060 420 1300 610 1480 430 1600 540V900H0Z" fill="url(#hill)"/>
+  <path d="M0 730c310-120 520-70 760 35 280 120 530 70 840-40V900H0Z" fill="#225c42"/>
+  <g fill="#ece6cf" stroke="#6c6b74" stroke-width="9">
+    <path d="M610 610V300h120v310Z"/><path d="M770 610V225h150v385Z"/><path d="M960 610V330h120v280Z"/>
+    <path d="m630 300 40-90 40 90Z"/><path d="m795 225 50-120 50 120Z"/><path d="m980 330 40-95 40 95Z"/>
+    <path d="M540 610h620v95H540Z"/>
+  </g>
+  <g fill="#3b4d8a"><rect x="665" y="360" width="26" height="62" rx="8"/><rect x="825" y="300" width="36" height="76" rx="10"/><rect x="1005" y="390" width="28" height="64" rx="8"/></g>
+  <path d="M780 705c10-90 80-132 160-132s150 42 160 132Z" fill="#1e2b44"/>
+  <g fill="#fef9d9" opacity=".8"><circle cx="190" cy="300" r="5"/><circle cx="400" cy="245" r="4"/><circle cx="1180" cy="300" r="6"/><circle cx="1430" cy="240" r="4"/></g>
+</svg>

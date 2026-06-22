@@ -1,50 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="이영재의 문서 열람">
-  <meta name="author" content="LYJ">
-  <meta name="generator" content="HTML5">
-  <title>PreView</title>
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="이영재의 문서 열람" />
-  <meta property="og:title" content="PreView" />
-  <meta property="og:description" content="게임기획서 모음." />
-  <meta property="og:image" content="./images/name_seo.png" />
-  <!-- 아텐츠주소 대신 자신의 웹페이지 주소로 바꾸세요 -->
-  <meta property="og:url" content="https://ZettStudio.netlify.app" />
-  <meta property="twitter:card" content="summary" />
-  <meta property="twitter:site" content="이영재의 문서 열람" />
-  <meta property="twitter:title" content="PreView" />
-  <meta property="twitter:description" content="게임기획서 모음." />
-  <meta property="twitter:image" content="./images/name_seo.png" />
-  <!-- 아텐츠주소 대신 자신의 웹페이지 주소로 바꾸세요 -->
-  <meta property="twitter:url" content="https://ZettStudio.netlify.app" />
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/main.css">
-  <!-- <link rel="stylesheet" href="/main.css"> -->
-  <!-- <script defer src="/main.js" ></script> -->
-  <!-- <script defer src="./main.js"></script> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="이영재 게임 기획 포트폴리오 — 구천을 기는 용, Gungeon Heroes, Familia Chronicle">
+  <meta name="theme-color" content="#071526">
+  <title>이영재 | Game Project Portfolio</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </head>
-
 <body>
-  <div style="position: fixed; z-index: -1; width: 100%; height: 100%;" >
-    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/URR7yQayl1Q?loop=1&autoplay=1&mute=1&si=EtDWyPuJ49_bIKTM" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    referrerpolicy="strict-origin-when-cross-origin" 
-    allowfullscreen>
-    </iframe>
-  </div>
-  <div>
-    <a id="pl" href="/pages/mainpage.html">이영재의 포트폴리오</a>
-  </div>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="홈으로 이동">
+        <strong>이영재</strong><span aria-hidden="true">|</span><span>Game Project Portfolio</span>
+      </a>
+
+      <button class="menu-toggle icon-button" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="주요 메뉴">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#videos">Videos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="theme-toggle icon-button" type="button" aria-label="테마 전환" title="테마 전환">
+        <span aria-hidden="true">☼</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="about" aria-labelledby="hero-title">
+      <div class="hero-slider" id="hero-slider" aria-hidden="true"></div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="container hero-content reveal">
+        <p class="eyebrow">GAME DESIGNER &amp; PLANNER</p>
+        <h1 id="hero-title">게임으로 설계하는<br><span>몰입과 성장의 경험</span></h1>
+        <p class="hero-copy">기획으로 세계를 만들고, 시스템으로 재미를 설계하며,<br>플레이어의 경험을 완성합니다.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">프로젝트 보기 <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="#videos">플레이 영상 보기 <span aria-hidden="true">▶</span></a>
+        </div>
+      </div>
+
+      <div class="hero-slider-controls" id="hero-slider-controls" aria-label="대표 프로젝트 이미지 슬라이드">
+        <div class="hero-slider-meta" aria-live="polite">
+          <span id="hero-slide-number">01 / 03</span>
+          <strong id="hero-slide-title">Gungeon Heroes</strong>
+        </div>
+        <div class="hero-slider-navigation">
+          <button class="hero-slider-arrow" type="button" data-hero-prev aria-label="이전 프로젝트 이미지">←</button>
+          <div class="hero-slider-dots" id="hero-slider-dots" role="tablist" aria-label="프로젝트 이미지 선택"></div>
+          <button class="hero-slider-arrow" type="button" data-hero-next aria-label="다음 프로젝트 이미지">→</button>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#projects" aria-label="프로젝트 섹션으로 이동"><span></span></a>
+    </section>
+
+    <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">FEATURED WORK</p>
+            <h2 id="projects-title"><span class="heading-icon" aria-hidden="true">✥</span> PROJECTS</h2>
+            <p>프로젝트 카드를 열면 해당 게임의 소개, 담당 범위, PDF 기획 문서를 한 화면에서 확인할 수 있습니다.</p>
+          </div>
+          <button class="text-button" type="button" data-show-all-projects>프로젝트 살펴보기 <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="project-grid" id="project-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section videos-section" id="videos" aria-labelledby="videos-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">UNREAL ENGINE PROTOTYPES</p>
+            <h2 id="videos-title"><span class="heading-icon" aria-hidden="true">◉</span> GAMEPLAY VIDEOS</h2>
+            <p>언리얼 엔진으로 구현한 핵심 루프와 레벨 플레이 프로토타입 영상입니다.</p>
+          </div>
+          <a class="text-button" id="youtube-channel-link" href="#" target="_blank" rel="noopener">YouTube 채널 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="video-grid" id="video-grid"></div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-card reveal">
+        <div>
+          <p class="section-kicker">CONTACT</p>
+          <h2 id="contact-title">좋은 플레이 경험을 함께 설계하겠습니다.</h2>
+          <p>프로젝트 관련 문의와 협업 제안은 아래 채널로 연락해 주세요.</p>
+        </div>
+        <div class="contact-actions" id="contact-actions"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="current-year"></span> 이영재. All rights reserved.</p>
+      <a href="#top" class="back-to-top" aria-label="페이지 맨 위로 이동">↑</a>
+    </div>
+  </footer>
+
+  <dialog class="modal project-modal" id="project-modal" aria-labelledby="project-modal-title">
+    <div class="modal-shell">
+      <button class="modal-close icon-button" type="button" data-close-modal aria-label="창 닫기">×</button>
+
+      <div class="project-modal-visual" id="project-modal-visual" aria-hidden="true"></div>
+
+      <div class="project-modal-body">
+        <div class="project-modal-intro">
+          <p class="eyebrow" id="project-modal-type"></p>
+          <h2 id="project-modal-title"></h2>
+          <p id="project-modal-description"></p>
+          <dl class="project-facts" id="project-modal-facts"></dl>
+        </div>
+
+        <section class="project-documents" aria-labelledby="project-documents-title">
+          <div class="project-documents-heading">
+            <div>
+              <p class="section-kicker">PROJECT DOCUMENTS</p>
+              <h3 id="project-documents-title">프로젝트 기획 문서</h3>
+            </div>
+            <span class="document-count" id="project-document-count"></span>
+          </div>
+          <p class="project-documents-help">PDF 파일을 등록하면 아래 항목에서 사이트 내부 뷰어로 바로 열립니다.</p>
+          <div class="project-document-list" id="project-modal-documents"></div>
+        </section>
+
+        <div class="modal-actions">
+          <button class="button button-primary" type="button" id="project-video-button">플레이 영상 보기 <span aria-hidden="true">▶</span></button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal viewer-modal" id="viewer-modal" aria-labelledby="viewer-title">
+    <div class="viewer-shell">
+      <div class="viewer-header">
+        <div>
+          <p class="section-kicker" id="viewer-kicker">DOCUMENT</p>
+          <h2 id="viewer-title">문서 보기</h2>
+        </div>
+        <div class="viewer-actions">
+          <a class="icon-button" id="viewer-external" href="#" target="_blank" rel="noopener" aria-label="새 탭에서 열기">↗</a>
+          <button class="modal-close icon-button" type="button" data-close-viewer aria-label="창 닫기">×</button>
+        </div>
+      </div>
+      <div class="viewer-frame-wrap" id="viewer-frame-wrap"></div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
-
-
 </html>
