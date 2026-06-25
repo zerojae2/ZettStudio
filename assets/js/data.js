@@ -48,52 +48,13 @@ window.PORTFOLIO_DATA = {
     name: "이영재",
     email: "zerojae2@gmail.com",
     location: "Seoul, Korea",
-    github: "https://github.com/",
+    github: "https://github.com/zerojae2",
     notion: "https://www.notion.so/",
     linkedin: "https://www.linkedin.com/",
-    youtube: "https://www.youtube.com/"
+    youtube: "https://www.youtube.com/@재투-o6n"
   },
 
   projects: [
-    {
-      id: "dragon-ascension",
-      title: "구천을 기는 용",
-      type: "TEAM PROJECT",
-      typeClass: "team",
-      image: "assets/images/dragon-ascension.svg",
-      heroImage: "assets/images/dragon-ascension.svg",
-      heroImagePosition: "50% 50%",
-      heroImagePositionTablet: "50% 46%",
-      heroImagePositionMobile: "50% 44%",
-      heroImageSize: "cover",
-      period: "2026년 진행 프로젝트",
-      category: "팀 프로젝트",
-      cardImagePosition: "50% 50%",
-      modalImagePosition: "50% 50%",
-      modalImagePositionTablet: "50% 45%",
-      modalImagePositionMobile: "50% 42%",
-      modalImageSize: "cover",
-      summary: "이무기가 용이 되기 위한 여정을 떠나 승천에 감춰진 비밀을 추적하는 한국형 다크 판타지 로그라이트.",
-      description: "한국 설화의 이무기와 승천 모티프를 기반으로, 선택형 룸 진행과 전투·성장·서사 구조를 결합한 팀 프로젝트입니다.",
-      tags: ["ROGUELITE", "DARK FANTASY", "ACTION"],
-      facts: {
-        "담당": "레벨 디자인 · 시스템 기획 · 문서 통합",
-        "엔진": "Unreal Engine 5",
-        "핵심 경험": "승천을 향한 압박감과 선택의 누적",
-        "플랫폼": "PC"
-      },
-      accent: "#ae78dc",
-      documents: [
-        { id: "proposal", title: "개발제안서", description: "프로젝트 목표와 개발 방향", file: "" },
-        { id: "character", title: "캐릭터컨셉기획서", description: "캐릭터 설정과 비주얼 콘셉트", file: "" },
-        { id: "environment", title: "배경컨셉기획서", description: "챕터별 공간과 아트 방향", file: "" },
-        { id: "system", title: "게임시스템기획서", description: "핵심 루프와 성장·전투 시스템", file: "" },
-        { id: "level", title: "레벨디자인기획서", description: "룸 구성과 전투·동선 설계", file: "" },
-        { id: "ui", title: "게임UI디자인기획서", description: "HUD와 메뉴 정보 구조", file: "" },
-        { id: "service", title: "게임서비스기획서", description: "운영과 업데이트 구조", file: "" }
-      ]
-    },
-
     {
       id: "gungeon-heroes",
       title: "Gungeon Heroes",
@@ -113,7 +74,7 @@ window.PORTFOLIO_DATA = {
       modalImagePositionMobile: "70% 45%",
       modalImageSize: "cover",
       summary: "일곱 감정이 탑으로 분리된 세계에서 파티를 구성하고 감정을 되찾는 액션 어드벤처 수집형 로그라이트 RPG.",
-      description: "귀여운 캐릭터 수집과 3인 파티 조합, 실시간 전투, 로그라이트 빌드 설계를 결합한 개인 프로젝트입니다.",
+      description: "캐릭터 수집과 3인 파티 조합, 실시간 전투, 로그라이트 빌드 설계를 결합한 개인 프로젝트입니다.",
       tags: ["ROGUELITE", "ACTION RPG", "ANIME"],
       facts: {
         "담당": "전체 게임 기획 · 시스템 · 데이터 설계",
@@ -123,13 +84,15 @@ window.PORTFOLIO_DATA = {
       },
       accent: "#4ebcff",
       documents: [
-        { id: "proposal", title: "개발제안서", description: "프로젝트 비전과 시장 포지셔닝", file: "" },
-        { id: "character", title: "캐릭터컨셉기획서", description: "수집 캐릭터와 파티 역할 설계", file: "" },
-        { id: "environment", title: "배경컨셉기획서", description: "일곱 감정의 탑과 세계관 비주얼", file: "" },
-        { id: "system", title: "게임시스템기획서", description: "전투·수집·성장·빌드 시스템", file: "" },
-        { id: "level", title: "레벨디자인기획서", description: "탑 공략과 로그라이트 룸 구성", file: "" },
-        { id: "ui", title: "게임UI디자인기획서", description: "파티 전투 HUD와 메뉴 UX", file: "" },
-        { id: "service", title: "게임서비스기획서", description: "캐릭터 업데이트와 라이브 운영", file: "" }
+        { id: "proposal", title: "개발제안서", description: "프로젝트 비전과 시장 포지셔닝", file: "documents/gungeon-heroes/Gungeon_Heroes_Development_Proposal.pdf" },
+        { id: "proposal", title: "게임 스토리 & 시나리오", description: "프로젝트 비전과 시장 포지셔닝", file: "documents/gungeon-heroes/Gungeon_Heroes_GameStory&Scenario.pdf" },
+        { id: "character", title: "캐릭터 컨셉 기획서", description: "수집 캐릭터와 파티 역할 설계", file: "documents/gungeon-heroes/Gungeon_Heroes_Character_Concept.pdf" },
+        { id: "environment", title: "배경 컨셉 기획서", description: "일곱 감정의 탑과 세계관 비주얼", file: "documents/gungeon-heroes/Gungeon_Heroes_Background_Concept.pdf" },
+        { id: "system", title: "게임 메카닉스 기획서", description: "카메라·컨트롤·감정 시스템", file: "documents/gungeon-heroes/Gungeon_Heroes_Game_Mechanics.pdf" },
+        { id: "system", title: "게임 콘텐츠 시스템 기획서", description: "전투·수집·성장·빌드 시스템", file: "documents/gungeon-heroes/Gungeon_Heroes_Game_Content_System.pdf" },
+        { id: "level", title: "레벨 디자인 기획서", description: "탑 공략과 로그라이트 룸 구성", file: "documents/gungeon-heroes/Gungeon_Heroes_Level_Design.pdf" },
+        { id: "ui", title: "게임 UI 디자인 기획서", description: "파티 전투 HUD와 메뉴 UX", file: "documents/gungeon-heroes/Gungeon_Heroes_UI_Design.pdf" },
+        { id: "service", title: "게임 서비스 기획서", description: "캐릭터 업데이트와 라이브 운영", file: "documents/gungeon-heroes/Gungeon_Heroes_Service.pdf" }
       ]
     },
 
@@ -138,8 +101,8 @@ window.PORTFOLIO_DATA = {
       title: "Familia Chronicle",
       type: "PERSONAL PROJECT",
       typeClass: "personal-green",
-      image: "assets/images/familia-chronicle.svg",
-      heroImage: "assets/images/familia-chronicle.svg",
+      image: "assets/images/familia-chronicle.png",
+      heroImage: "assets/images/familia-chronicle.png",
       heroImagePosition: "50% 50%",
       heroImagePositionTablet: "50% 46%",
       heroImagePositionMobile: "50% 44%",
@@ -170,6 +133,45 @@ window.PORTFOLIO_DATA = {
         { id: "ui", title: "게임UI디자인기획서", description: "MMORPG HUD와 커뮤니티 UX", file: "" },
         { id: "service", title: "게임서비스기획서", description: "시즌·이벤트·운영 정책", file: "" }
       ]
+    },
+
+    {
+      id: "dragon-ascension",
+      title: "구천을 기는 용",
+      type: "TEAM PROJECT",
+      typeClass: "team",
+      image: "assets/images/dragon-ascension.png",
+      heroImage: "assets/images/dragon-ascension.png",
+      heroImagePosition: "50% 50%",
+      heroImagePositionTablet: "50% 46%",
+      heroImagePositionMobile: "50% 44%",
+      heroImageSize: "cover",
+      period: "2026년 진행 프로젝트",
+      category: "팀 프로젝트",
+      cardImagePosition: "50% 50%",
+      modalImagePosition: "50% 50%",
+      modalImagePositionTablet: "50% 45%",
+      modalImagePositionMobile: "50% 42%",
+      modalImageSize: "cover",
+      summary: "이무기가 용이 되기 위한 여정을 떠나 승천에 감춰진 비밀을 추적하는 한국형 다크 판타지 로그라이트.",
+      description: "한국 설화의 이무기와 승천 모티프를 기반으로, 선택형 룸 진행과 전투·성장·서사 구조를 결합한 팀 프로젝트입니다.",
+      tags: ["ROGUELITE", "DARK FANTASY", "ACTION"],
+      facts: {
+        "담당": "레벨 디자인 · 시스템 기획 · 문서 통합",
+        "엔진": "Unreal Engine 5",
+        "핵심 경험": "승천을 향한 압박감과 선택의 누적",
+        "플랫폼": "PC"
+      },
+      accent: "#ae78dc",
+      documents: [
+        { id: "proposal", title: "개발제안서", description: "프로젝트 목표와 개발 방향", file: "" },
+        { id: "character", title: "캐릭터컨셉기획서", description: "캐릭터 설정과 비주얼 콘셉트", file: "" },
+        { id: "environment", title: "배경컨셉기획서", description: "챕터별 공간과 아트 방향", file: "" },
+        { id: "system", title: "게임시스템기획서", description: "핵심 루프와 성장·전투 시스템", file: "" },
+        { id: "level", title: "레벨디자인기획서", description: "룸 구성과 전투·동선 설계", file: "" },
+        { id: "ui", title: "게임UI디자인기획서", description: "HUD와 메뉴 정보 구조", file: "" },
+        { id: "service", title: "게임서비스기획서", description: "운영과 업데이트 구조", file: "" }
+      ]
     }
   ],
 
@@ -179,14 +181,14 @@ window.PORTFOLIO_DATA = {
       title: "구천을 기는 용 | UE5 Prototype",
       duration: "2:15",
       youtubeId: "",
-      thumbnail: "assets/images/dragon-ascension.svg",
+      thumbnail: "assets/images/dragon-ascension.png",
       imagePosition: "50% 50%"
     },
     {
       projectId: "gungeon-heroes",
       title: "Gungeon Heroes | UE5 Prototype",
-      duration: "2:26",
-      youtubeId: "",
+      duration: "0:33",
+      youtubeId: "fPc3WVUWpRs",
       thumbnail: "assets/images/gungeon-heroes-hero.png",
       imagePosition: "65% 50%"
     },
@@ -195,7 +197,7 @@ window.PORTFOLIO_DATA = {
       title: "Familia Chronicle | UE5 Prototype",
       duration: "2:18",
       youtubeId: "",
-      thumbnail: "assets/images/familia-chronicle.svg",
+      thumbnail: "assets/images/familia-chronicle.png",
       imagePosition: "50% 50%"
     }
   ]

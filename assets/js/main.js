@@ -245,7 +245,6 @@
           <span class="project-document-icon" aria-hidden="true">PDF</span>
           <span class="project-document-copy">
             <strong>${escapeHTML(document.title)}</strong>
-            <small>${escapeHTML(document.description || "PDF 기획 문서")}</small>
           </span>
           <span class="project-document-state">${available ? "열기 ↗" : "준비 중"}</span>
         </button>
