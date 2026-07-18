@@ -794,3 +794,76 @@ img { display: block; max-width: 100%; }
     line-height: 1.08;
   }
 }
+
+
+/* =========================================================
+   PROJECT DOCUMENT FILTERS — PDF / SVG
+   ========================================================= */
+.project-document-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 16px;
+}
+
+.document-filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .01em;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.document-filter-button em {
+  color: color-mix(in srgb, var(--accent) 78%, white 22%);
+  font-style: normal;
+  font-size: .66rem;
+}
+
+.document-filter-button:hover,
+.document-filter-button.is-active {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--accent) 64%, var(--line));
+  background: color-mix(in srgb, var(--surface-light) 78%, var(--accent) 16%);
+  color: var(--text);
+}
+
+.project-document-item--svg .project-document-icon {
+  border-color: color-mix(in srgb, #6fd49a 65%, var(--line));
+  color: color-mix(in srgb, #6fd49a 80%, var(--text) 20%);
+}
+
+.project-document-item--svg.is-available .project-document-state {
+  color: color-mix(in srgb, #6fd49a 78%, var(--text) 22%);
+}
+
+.viewer-frame-wrap.is-svg-viewer {
+  background:
+    linear-gradient(45deg, rgba(255,255,255,.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,.05) 75%),
+    #06101d;
+  background-position: 0 0, 0 14px, 14px -14px, -14px 0, 0 0;
+  background-size: 28px 28px, 28px 28px, 28px 28px, 28px 28px, auto;
+}
+
+.viewer-frame-wrap.is-svg-viewer iframe {
+  background: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .document-filter-button {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+}

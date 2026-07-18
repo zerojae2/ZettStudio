@@ -28,6 +28,7 @@
   let heroSlideTimer = null;
   let heroPointerStartX = null;
   const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activeDocumentFilter = "all";
 
   const escapeHTML = (value = "") => String(value)
     .replaceAll("&", "&amp;")
@@ -49,6 +50,23 @@
 
   function getProjectVideo(projectId) {
     return data.videos.find((video) => video.projectId === projectId);
+  }
+
+  function getDocumentType(documentItem) {
+    const explicitType = String(documentItem.type || "").toLowerCase().trim();
+    if (explicitType === "svg" || explicitType === "pdf") return explicitType;
+
+    const file = String(documentItem.file || "").split("?")[0].toLowerCase();
+    if (file.endsWith(".svg")) return "svg";
+    return "pdf";
+  }
+
+  function getDocumentTypeLabel(type) {
+    return type === "svg" ? "SVG" : "PDF";
+  }
+
+  function getDocumentDefaultDescription(type) {
+    return type === "svg" ? "SVG 기획 자료" : "PDF 기획 문서";
   }
 
   function getHeroImage(project) {
@@ -216,13 +234,69 @@
     }).join("");
   }
 
-  function renderProjectDocuments(project) {
+  function renderProjectDocuments(project, filter = activeDocumentFilter) {
     const documents = Array.isArray(project.documents) ? project.documents : [];
-    const registeredCount = documents.filter((document) => Boolean(document.file)).length;
+    const normalizedDocuments = documents.map((document) => ({
+      ...document,
+      normalizedType: getDocumentType(document)
+    }));
 
-    $("#project-document-count").textContent = `등록 ${registeredCount} / ${documents.length}`;
+    const registeredCount = normalizedDocuments.filter((document) => Boolean(document.file)).length;
+    const typeCounts = normalizedDocuments.reduce((acc, document) => {
+      const type = document.normalizedType;
+      acc[type] = acc[type] || { total: 0, registered: 0 };
+      acc[type].total += 1;
+      if (document.file) acc[type].registered += 1;
+      return acc;
+    }, {});
 
-    if (!documents.length) {
+    const validTypes = Object.keys(typeCounts).filter((type) => typeCounts[type].total > 0);
+    if (filter !== "all" && !validTypes.includes(filter)) {
+      activeDocumentFilter = "all";
+    } else {
+      activeDocumentFilter = filter;
+    }
+
+    $("#project-document-count").textContent = `등록 ${registeredCount} / ${normalizedDocuments.length}`;
+
+    const filterButtons = [
+      {
+        id: "all",
+        label: "전체",
+        total: normalizedDocuments.length,
+        registered: registeredCount
+      },
+      ...validTypes.map((type) => ({
+        id: type,
+        label: getDocumentTypeLabel(type),
+        total: typeCounts[type].total,
+        registered: typeCounts[type].registered
+      }))
+    ];
+
+    const filterWrap = $("#project-document-filters");
+    if (filterWrap) {
+      filterWrap.innerHTML = filterButtons.map((item) => {
+        const active = activeDocumentFilter === item.id;
+        return `
+          <button
+            class="document-filter-button ${active ? "is-active" : ""}"
+            type="button"
+            role="tab"
+            aria-selected="${active}"
+            data-document-filter="${escapeHTML(item.id)}">
+            <span>${escapeHTML(item.label)}</span>
+            <em>${item.registered}/${item.total}</em>
+          </button>
+        `;
+      }).join("");
+    }
+
+    const filteredDocuments = activeDocumentFilter === "all"
+      ? normalizedDocuments
+      : normalizedDocuments.filter((document) => document.normalizedType === activeDocumentFilter);
+
+    if (!normalizedDocuments.length) {
       $("#project-modal-documents").innerHTML = `
         <div class="project-documents-empty">
           등록된 문서 항목이 없습니다. assets/js/data.js의 해당 프로젝트 documents 배열에 문서를 추가해 주세요.
@@ -231,20 +305,33 @@
       return;
     }
 
-    $("#project-modal-documents").innerHTML = documents.map((document, index) => {
+    if (!filteredDocuments.length) {
+      $("#project-modal-documents").innerHTML = `
+        <div class="project-documents-empty">
+          이 형식에 해당하는 문서가 없습니다.
+        </div>
+      `;
+      return;
+    }
+
+    $("#project-modal-documents").innerHTML = filteredDocuments.map((document, index) => {
       const available = Boolean(document.file);
+      const type = document.normalizedType;
+      const typeLabel = getDocumentTypeLabel(type);
       return `
         <button
-          class="project-document-item ${available ? "is-available" : "is-pending"}"
+          class="project-document-item project-document-item--${escapeHTML(type)} ${available ? "is-available" : "is-pending"}"
           type="button"
           data-document-file="${escapeHTML(document.file)}"
           data-document-title="${escapeHTML(document.title)}"
+          data-document-type="${escapeHTML(type)}"
           data-project-title="${escapeHTML(project.title)}"
           style="--item-delay:${index * 35}ms"
           aria-label="${escapeHTML(document.title)} ${available ? "열기" : "준비 중"}">
-          <span class="project-document-icon" aria-hidden="true">PDF</span>
+          <span class="project-document-icon" aria-hidden="true">${typeLabel}</span>
           <span class="project-document-copy">
             <strong>${escapeHTML(document.title)}</strong>
+            <small>${escapeHTML(document.description || getDocumentDefaultDescription(type))}</small>
           </span>
           <span class="project-document-state">${available ? "열기 ↗" : "준비 중"}</span>
         </button>
@@ -312,6 +399,8 @@
       <div><dt>${escapeHTML(label)}</dt><dd>${escapeHTML(value)}</dd></div>
     `).join("");
 
+    activeDocumentFilter = "all";
+    projectModal.dataset.activeProject = project.id;
     renderProjectDocuments(project);
 
     const projectVideoButton = $("#project-video-button");
@@ -323,16 +412,20 @@
     document.body.classList.add("modal-open");
   }
 
-  function openPdf(file, title, projectTitle) {
+  function openDocument(file, title, projectTitle, type = "pdf") {
+    const normalizedType = type === "svg" ? "svg" : "pdf";
     if (!file) {
-      showToast("PDF 파일이 아직 연결되지 않았습니다. assets/js/data.js에서 해당 프로젝트 문서의 file 경로를 등록해 주세요.");
+      showToast(`${getDocumentTypeLabel(normalizedType)} 파일이 아직 연결되지 않았습니다. assets/js/data.js에서 해당 문서의 file 경로를 등록해 주세요.`);
       return;
     }
 
-    $("#viewer-kicker").textContent = projectTitle;
+    const typeLabel = getDocumentTypeLabel(normalizedType);
+    $("#viewer-kicker").textContent = `${projectTitle} · ${typeLabel}`;
     $("#viewer-title").textContent = title;
     $("#viewer-external").href = file;
-    $("#viewer-frame-wrap").innerHTML = `<iframe src="${escapeHTML(file)}" title="${escapeHTML(title)} PDF 뷰어"></iframe>`;
+    const frameTitle = `${escapeHTML(title)} ${typeLabel} 뷰어`;
+    $("#viewer-frame-wrap").classList.toggle("is-svg-viewer", normalizedType === "svg");
+    $("#viewer-frame-wrap").innerHTML = `<iframe src="${escapeHTML(file)}" title="${frameTitle}"></iframe>`;
     viewerModal.showModal();
     document.body.classList.add("modal-open");
   }
@@ -366,7 +459,10 @@
   function closeDialog(dialog) {
     if (!dialog.open) return;
     dialog.close();
-    if (dialog === viewerModal) $("#viewer-frame-wrap").innerHTML = "";
+    if (dialog === viewerModal) {
+      $("#viewer-frame-wrap").innerHTML = "";
+      $("#viewer-frame-wrap").classList.remove("is-svg-viewer");
+    }
     if (![projectModal, viewerModal].some((item) => item.open)) {
       document.body.classList.remove("modal-open");
     }
@@ -467,12 +563,20 @@
         return;
       }
 
+      const documentFilterButton = event.target.closest("[data-document-filter]");
+      if (documentFilterButton) {
+        const project = getProject(projectModal.dataset.activeProject);
+        if (project) renderProjectDocuments(project, documentFilterButton.dataset.documentFilter);
+        return;
+      }
+
       const documentButton = event.target.closest("[data-document-file]");
       if (documentButton) {
-        openPdf(
+        openDocument(
           documentButton.dataset.documentFile,
           documentButton.dataset.documentTitle,
-          documentButton.dataset.projectTitle
+          documentButton.dataset.projectTitle,
+          documentButton.dataset.documentType
         );
         return;
       }

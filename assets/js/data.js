@@ -92,7 +92,14 @@ window.PORTFOLIO_DATA = {
         { id: "system", title: "게임 콘텐츠 시스템 기획서", description: "전투·수집·성장·빌드 시스템", file: "documents/gungeon-heroes/Gungeon_Heroes_Game_Content_System.pdf" },
         { id: "level", title: "레벨 디자인 기획서", description: "탑 공략과 로그라이트 룸 구성", file: "documents/gungeon-heroes/Gungeon_Heroes_Level_Design.pdf" },
         { id: "ui", title: "게임 UI 디자인 기획서", description: "파티 전투 HUD와 메뉴 UX", file: "documents/gungeon-heroes/Gungeon_Heroes_UI_Design.pdf" },
-        { id: "service", title: "게임 서비스 기획서", description: "캐릭터 업데이트와 라이브 운영", file: "documents/gungeon-heroes/Gungeon_Heroes_Service.pdf" }
+        { id: "service", title: "게임 서비스 기획서", description: "캐릭터 업데이트와 라이브 운영", file: "documents/gungeon-heroes/Gungeon_Heroes_Service.pdf" },
+        { id: "level-flow-svg", title: "Gungeon Heroes 교만의 탑 레벨 프로세스 플로우", description: "교만의 탑 층 진행 구조", type: "svg", file: "assets/svg/Gungeon Heroes Tower of Pride.svg" },
+        { id: "level-flow-svg", title: "Gungeon Heroes 축적의 탑 레벨 프로세스 플로우", description: "축적의 탑 층 진행 구조", type: "svg", file: "assets/svg/Gungeon Heroes Tower of Avarice.svg" },
+        { id: "level-flow-svg", title: "Gungeon Heroes 복제의 탑 레벨 프로세스 플로우", description: "복제의 탑 층 진행 구조", type: "svg", file: "assets/svg/Gungeon Heroes Tower of Envy.svg" },
+        { id: "level-flow-svg", title: "Gungeon Heroes 분노의 탑 레벨 프로세스 플로우", description: "분노의 탑 층 진행 구조", type: "svg", file: "assets/svg/Gungeon Heroes Tower of Wrath.svg" },
+        { id: "level-flow-svg", title: "Gungeon Heroes 유혹의 탑 레벨 프로세스 플로우", description: "유혹의 탑 층 진행 구조", type: "svg", file: "assets/svg/Gungeon Heroes Tower of Desire.svg" },
+        { id: "level-flow-svg", title: "Gungeon Heroes 탐욕의 탑 레벨 프로세스 플로우", description: "탐욕의 탑 층 진행 구조", type: "svg", file: "assets/svg/Gungeon Heroes Tower of Greed.svg" },
+        { id: "level-flow-svg", title: "Gungeon Heroes 나태의 탑 레벨 프로세스 플로우", description: "나태의 탑 층 진행 구조", type: "svg", file: "assets/svg/Gungeon Heroes Tower of Sloth.svg" },
       ]
     },
 
