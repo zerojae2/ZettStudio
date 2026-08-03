@@ -867,3 +867,47 @@ img { display: block; max-width: 100%; }
     justify-content: center;
   }
 }
+
+.project-detail-actions,
+.modal-actions,
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-simulator-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid rgba(124, 203, 255, 0.36);
+  border-radius: 14px;
+  background: rgba(124, 203, 255, 0.08);
+  color: #f7fbff;
+  font-weight: 800;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.project-simulator-button:hover {
+  border-color: rgba(124, 203, 255, 0.75);
+  background: rgba(124, 203, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .project-detail-actions,
+  .modal-actions,
+  .project-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #project-video-button,
+  .project-simulator-button {
+    width: 100%;
+  }
+}

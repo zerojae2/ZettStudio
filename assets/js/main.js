@@ -406,6 +406,28 @@
     const projectVideoButton = $("#project-video-button");
     projectVideoButton.dataset.projectVideo = project.id;
 
+    let projectSimulatorButton = $("#project-simulator-button");
+
+    if (!projectSimulatorButton) {
+      projectSimulatorButton = document.createElement("a");
+      projectSimulatorButton.id = "project-simulator-button";
+      projectSimulatorButton.className = "project-simulator-button";
+      projectSimulatorButton.textContent = "HTML 시뮬레이터 보기 ↗";
+      projectSimulatorButton.target = "_blank";
+      projectSimulatorButton.rel = "noopener noreferrer";
+
+      projectVideoButton.insertAdjacentElement("afterend", projectSimulatorButton);
+    }
+
+    if (project.simulatorUrl) {
+      projectSimulatorButton.href = project.simulatorUrl;
+      projectSimulatorButton.hidden = false;
+      projectSimulatorButton.setAttribute("aria-label", `${project.title} HTML 시뮬레이터 보기`);
+    } else {
+      projectSimulatorButton.href = "#";
+      projectSimulatorButton.hidden = true;
+    }
+
     projectModal.style.setProperty("--accent", project.accent);
     projectModalBody.scrollTop = 0;
     projectModal.showModal();
