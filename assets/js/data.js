@@ -103,7 +103,7 @@ window.PORTFOLIO_DATA = {
       ]
     },
 
-    {
+    /*{
       id: "familia-chronicle",
       title: "Familia Chronicle",
       type: "PERSONAL PROJECT",
@@ -140,7 +140,7 @@ window.PORTFOLIO_DATA = {
         { id: "ui", title: "게임UI디자인기획서", description: "MMORPG HUD와 커뮤니티 UX", file: "" },
         { id: "service", title: "게임서비스기획서", description: "시즌·이벤트·운영 정책", file: "" }
       ]
-    },
+    },*/
 
     {
       id: "dragon-ascension",
@@ -184,20 +184,20 @@ window.PORTFOLIO_DATA = {
 
   videos: [
     {
-      projectId: "dragon-ascension",
-      title: "구천을 기는 용 | UE5 Prototype",
-      duration: "2:15",
-      youtubeId: "",
-      thumbnail: "assets/images/dragon-ascension.png",
-      imagePosition: "50% 50%"
-    },
-    {
       projectId: "gungeon-heroes",
       title: "Gungeon Heroes | UE5 Prototype",
       duration: "0:33",
       youtubeId: "fPc3WVUWpRs",
       thumbnail: "assets/images/gungeon-heroes-hero.png",
       imagePosition: "65% 50%"
+    },
+    {
+      projectId: "dragon-ascension",
+      title: "구천을 기는 용 | UE5 Prototype",
+      duration: "2:15",
+      youtubeId: "",
+      thumbnail: "assets/images/dragon-ascension.png",
+      imagePosition: "50% 50%"
     },
     {
       projectId: "familia-chronicle",
